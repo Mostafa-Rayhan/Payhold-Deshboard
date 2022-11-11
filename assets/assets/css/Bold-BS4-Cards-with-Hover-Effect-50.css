@@ -1,0 +1,124 @@
+.box {
+  position: relative;
+  perspective: 1000px;
+  width: fit-content;
+  width: 100%;
+  height: 100%;
+}
+
+.box .box-img {
+  /* transform: rotateX(0); */
+  transform: scaleX(1);
+  transition: all 0.5s ease-in-out 0s;
+  width: 100%;
+  height: 100%;
+}
+
+.box:hover .box-img {
+  /* transform: rotateX(-90deg); */
+  filter: blur(2px);
+}
+
+.box .box-img img {
+  width: 100%;
+  height: 100%;
+}
+.box,
+.box .box-img img,
+.box .box-content {
+  border-radius: 0.7rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.upcoming-flex {
+  height: 250px;
+  width: fit-content;
+}
+.box .box-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  /* transform: rotateX(90deg); */
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: all 0.5s ease-in-out 0s;
+
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box:hover .box-content {
+  /* transform: rotateX(0); */
+  transform: scaleX(1);
+}
+
+.box .title {
+  font-size: 20px;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.box .description {
+  font-size: 14px;
+  line-height: 24px;
+  color: #fff;
+}
+.box .description:after {
+  content: '';
+  width: 0%;
+  display: block;
+  border-bottom: 1px solid #fff;
+  margin: 15px auto;
+}
+.box .title:after {
+  content: '';
+  width: 80%;
+  display: block;
+  border-bottom: 1px solid #fff;
+  margin: 15px auto;
+}
+
+.box .social-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.box .social-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.box .social-links li a {
+  font-size: 20px;
+  color: #a6a6a6;
+}
+
+.box .social-links li a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media only screen and (max-width: 990px) {
+  .box {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .box .box-content {
+    padding: 20px;
+  }
+}
